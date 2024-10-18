@@ -1,5 +1,6 @@
 package Compras;
 
+import Compras.Produto;
 import Descontos.DescontoStrategy;
 
 import java.util.ArrayList;
@@ -24,7 +25,10 @@ public class CarrinhoDeCompras {
     public double calcularTotalComDesconto() {
         double total = 0.0;
         for (Produto produto : produtos) {
-            total += descontoStrategy.calcularDesconto(produto.getPreco());
+            double precoOriginal = produto.getPreco(); // Obtém o preço original do produto
+            double descontoAplicado = descontoStrategy.calcularDesconto(precoOriginal); // Calcula o valor do desconto
+            double precoComDesconto = precoOriginal - descontoAplicado; // Subtrai o desconto do preço original
+            total += precoComDesconto; // Adiciona o preço com desconto ao total
         }
         return total;
     }

@@ -3,6 +3,7 @@ package Descontos;
 public class DescontoClienteNovo implements DescontoStrategy {
     @Override
     public double calcularDesconto(double preco) {
-        return preco; // Sem desconto
+        return 0; // Cliente novo, sem desconto
     }
 }
+
