@@ -25,10 +25,10 @@ public class CarrinhoDeCompras {
     public double calcularTotalComDesconto() {
         double total = 0.0;
         for (Produto produto : produtos) {
-            double precoOriginal = produto.getPreco(); // Obtém o preço original do produto
-            double descontoAplicado = descontoStrategy.calcularDesconto(precoOriginal); // Calcula o valor do desconto
-            double precoComDesconto = precoOriginal - descontoAplicado; // Subtrai o desconto do preço original
-            total += precoComDesconto; // Adiciona o preço com desconto ao total
+            double precoOriginal = produto.getPreco();
+            double descontoAplicado = descontoStrategy.calcularDesconto(precoOriginal);
+            double precoComDesconto = precoOriginal - descontoAplicado;
+            total += precoComDesconto;
         }
         return total;
     }
